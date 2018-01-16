@@ -1,8 +1,8 @@
 DATABASE_CONFIG = {
     'host': '104.198.0.87',
     'port': 3306,
-    'user': 'curw-iot',
-    'password': 'curw-iot@123',
+    'user': 'root',
+    'password': 'cfcwm07',
     'db': 'curw'
 }
 
@@ -50,7 +50,7 @@ Hi,
 
 %s
 
-Please look into the data inconsistency issue and proceed as necessary.
+Please look into the data inconsistency issue at %s and proceed as necessary.
 
 Thanks,
 curwalerts.

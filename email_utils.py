@@ -21,7 +21,8 @@ def send_email(run_source, checked_date, msg, recipient_list=RECIPIENT_LIST):
         # setup the parameters of the message
         email_message['From'] = EMAIL_SERVER_CONFIG['user-name']
         email_message['To'] = ", ".join(recipient_list)
-        email_message['Subject'] = "[%s][%s] Data Inconsistency!" % (run_source, checked_date)
+        email_message['Subject'] = "Data Inconsistency at source: '%s' on %s" % (run_source, checked_date)
+        print(email_message['Subject'])
         # add in the message body
         email_message.attach(MIMEText(msg, 'plain'))
 

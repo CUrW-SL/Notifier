@@ -52,12 +52,14 @@ try:
                     alert_message = ALERT_MESSAGE % (last_date, now_date, FORECAST_DAYS[source])
                     print(alert_message)
                     print("Generating email alerts...")
-                    send_email(run_source=source, checked_date=now_date, msg=EMAIL_ALERT_TEMPLATE % alert_message)
+                    send_email(run_source=source, checked_date=now_date,
+                               msg=EMAIL_ALERT_TEMPLATE % (alert_message, source))
 
             else:
                 # No last recorded end_date can be found for the source
+                alert_message = "No last end_date found for the source %s." % source
                 send_email(run_source=source, checked_date=now_date,
-                           msg="No last end_date found for the source %s." % source)
+                           msg=EMAIL_ALERT_TEMPLATE % (alert_message, source))
             cursor.close()
 
 except Exception as ex:
