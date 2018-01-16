@@ -3,6 +3,7 @@
 # Change directory into where email_notifer.py script is located.
 echo "Changing into ~/email-notifier."
 cd /home/uwcc-admin/email-notifier
+echo "Inside `pwd`"
 
 # If no venv (python3 virtual environment) exists, then create one.
 if [ ! -d "venv" ]
@@ -16,9 +17,16 @@ echo "Activating venv python3 virtual environment."
 source venv/bin/activate
 
 # Install PyMySQL using pip.
-echo "Install PyMySQL."
-pip install PyMySQL
+if [ ! -f "notifier.log" ]
+then
+    echo "Installing PyMySQL."
+    pip install PyMySQL
+fi
 
 # Run email_notifier.py script.
 echo "Running email_notifier.py. Logs Available in notifier.log file."
 python email_notifier.py >> notifier.log
+
+# Deactivating virtual environment
+echo "Deactivating virtual environment"
+deactivate

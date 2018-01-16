@@ -1,8 +1,8 @@
 DATABASE_CONFIG = {
-    'host': '104.198.0.87',
+    'host': '10.138.0.6',
     'port': 3306,
-    'user': 'root',
-    'password': 'cfcwm07',
+    'user': 'curw',
+    'password': 'curw@123',
     'db': 'curw'
 }
 
@@ -32,7 +32,11 @@ EMAIL_SERVER_CONFIG = {
 }
 
 RECIPIENT_LIST = [
-    'thilina.11@cse.mrt.ac.lk'
+    'thilina.11@cse.mrt.ac.lk',
+    'srikantha.herath@gmail.com',
+    'gihan.09@cse.mrt.ac.lk',
+    'lahikos@gmail.com',
+    'niranda.17@cse.mrt.ac.lk'
 ]
 
 NO_ALERT_MESSAGE = """The gap between the 
