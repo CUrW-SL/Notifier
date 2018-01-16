@@ -13,4 +13,3 @@
 - FORECAST_DAYS: The map of forecast days per each source.
 - RECIPIENT_LIST: The list of emails to whom notifications should be sent.
 - EMAIL_SERVER_CONFIG: Configs related to smtp server.
-
