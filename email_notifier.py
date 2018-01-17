@@ -1,10 +1,16 @@
 import pymysql.cursors
+import pytz
 from datetime import datetime
 from datetime import timedelta
 
 from config import DATABASE_CONFIG, SOURCES, FORECAST_DAYS
 from config import NO_ALERT_MESSAGE, ALERT_MESSAGE, EMAIL_ALERT_TEMPLATE
 from email_utils import send_email
+
+
+def utc_to_sl(utc_dt):
+    sl_timezone = pytz.timezone('Asia/Colombo')
+    return utc_dt.replace(tzinfo=pytz.utc).astimezone(tz=sl_timezone)
 
 
 # Connect to the database.
@@ -20,7 +26,7 @@ try:
     # SQL query to get the end date of the last added run of the corresponding source.
     sql = "SELECT end_date FROM run_view WHERE source='%s' ORDER BY end_date DESC limit 1;"
     # Current date.
-    now_date = datetime.now().date()
+    now_date = utc_to_sl(datetime.now()).date()
 
     for source in SOURCES:
 

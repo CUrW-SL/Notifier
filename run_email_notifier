@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Print execution date time
+echo `date`
+
 # Change directory into where email_notifer.py script is located.
 echo "Changing into ~/email-notifier."
 cd /home/uwcc-admin/email-notifier
@@ -19,6 +22,8 @@ source venv/bin/activate
 # Install PyMySQL using pip.
 if [ ! -f "notifier.log" ]
 then
+    echo "Installing pytz"
+    pip install pytz
     echo "Installing PyMySQL."
     pip install PyMySQL
 fi

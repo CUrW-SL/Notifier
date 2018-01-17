@@ -18,10 +18,10 @@ SOURCES = [
 FORECAST_DAYS = {
     'FLO2D': 2,
     'HEC-HMS': 5,
-    'wrf0': 3,
-    'wrf1': 3,
-    'wrf2': 3,
-    'wrf3': 3
+    'wrf0': 2,
+    'wrf1': 2,
+    'wrf2': 2,
+    'wrf3': 2
 }
 
 EMAIL_SERVER_CONFIG = {
